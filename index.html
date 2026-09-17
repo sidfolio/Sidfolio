@@ -2276,7 +2276,7 @@ class Component extends DCLogic {
         clearInterval(this._gifCountdownTimer);
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
-        a.href = url; a.download = 'pixel-grid-creation.gif';
+        a.href = url; a.download = 'Made in Sidfolio.gif';
         document.body.appendChild(a); a.click(); a.remove();
         URL.revokeObjectURL(url);
         this.setState({ gifRecording: false, gifCountdown: 0 });

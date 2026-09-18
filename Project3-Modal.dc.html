@@ -41,6 +41,11 @@
     .carousel-track img { -webkit-user-drag: none; }
     .carousel-card { flex-shrink: 0; height: 336px; border-radius: 12px; overflow: hidden; }
     .carousel-card img { height: 100%; width: auto; display: block; }
+    @media (max-width: 600px) {
+      .hero-video-wrap { height: auto !important; aspect-ratio: 800/460; }
+      .h2 { font-size: 16px !important; line-height: 20px !important; }
+      .role-badge { white-space: normal !important; }
+    }
     .tilt-card { transform: perspective(1000px) rotateX(0) rotateY(0) scale(1) translateZ(0); will-change: transform; }
     .icon-card { background: #FFFFFF; box-shadow: 0 4px 16px 0 rgba(0,0,0,0.05); border: 1px solid #E5E5E5; padding: 18px; display: flex; align-items: center; gap: 16px; }
     .icon-card img { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
@@ -102,7 +107,7 @@
     <div class="content-container" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 56px 24px 60px; padding-top: 24px; padding-bottom: 24px">
       <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; max-width: 956px">
         <div style="display: flex; justify-content: center; align-items: center; padding: 6px 12px; border-radius: 0px; border: none; flex-shrink: 0; background-color: #ECECEC">
-          <span style="font-family: 'Work Sans', sans-serif; font-weight: 500; font-size: 12px; color: #2E2E2E; text-transform: uppercase; letter-spacing: 0.12px; line-height: 18px; white-space: nowrap">UI/UX Designer @ HDFC Bank</span>
+          <span class="role-badge" style="font-family: 'Work Sans', sans-serif; font-weight: 500; font-size: 12px; color: #2E2E2E; text-transform: uppercase; letter-spacing: 0.12px; line-height: 18px; white-space: nowrap">UI/UX Designer @ HDFC Bank</span>
         </div>
         <h1 style="font-family: 'Work Sans', sans-serif; font-weight: 400; font-size: 24px; line-height: 28px; text-align: left; color: #2E2E2E; letter-spacing: -0.24px">Designing the users' transaction recap for HDFC Bank's mobile banking app</h1>
         <div style="display: flex; gap: 8px; justify-content: flex-start; align-items: center; flex-wrap: wrap; font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.196px; color: #2E2E2E;">
@@ -117,7 +122,7 @@
           <span style="color: #969696; font-weight: 400; white-space: nowrap; letter-spacing: -0.24px">Interview</span>
         </div>
       </div>
-      <div style="width: 800px; height: 460px; max-width: 100%; overflow: hidden; align-self: flex-start;">
+      <div class="hero-video-wrap" style="width: 800px; height: 460px; max-width: 100%; overflow: hidden; align-self: flex-start;">
         <video src="uploads/hdfc-fd7d389a.mp4" autoplay="true" loop="true" muted="true" playsinline="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
       </div>
     </div>
@@ -172,7 +177,7 @@
         <p class="body-copy" style="color: #727272; font-size: 14px; letter-spacing: -0.24px">I reviewed multiple studies on simplifying financial information. Secondary research has shown that financial recaps and journey-based insights increase users' likelihood of investing and borrowing by improving clarity and confidence.</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
-        <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; justify-content: normal; align-items: center; width: 800px"><img src="./frame-1437256121-mtv09sc5-vyy4.png" onClick="{{ openImg }}" alt="frame-1437256121" width="1192" height="626" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 1192px; aspect-ratio: 1192 / 626"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; color: #2E2E2E; font-size: 11px"><span style="white-space: pre-wrap; font-weight: 400">Research metrics</span></span></div>
+        <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; justify-content: normal; align-items: center; width: 800px; max-width: 100%"><img src="./frame-1437256121-mtv09sc5-vyy4.png" onClick="{{ openImg }}" alt="frame-1437256121" width="1192" height="626" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 1192px; aspect-ratio: 1192 / 626"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; color: #2E2E2E; font-size: 11px"><span style="white-space: pre-wrap; font-weight: 400">Research metrics</span></span></div>
         
       </div>
     </div>
@@ -199,7 +204,7 @@
         <h2 class="h2" style="color: #2E2E2E; font-size: 20px; font-weight: 400; letter-spacing: -0.24px">Constructing the use cases</h2>
         <p class="body-copy" style="color: #727272; font-size: 14px; letter-spacing: -0.24px">At HDFC Bank, we used a structured Excel framework to define epics, map detailed use cases, and craft user-facing messages. Each use case was prioritized (P0–P2) to guide design focus and establish clear visual hierarchy across the recap journey. This systematic mapping helped translate research insights into a coherent narrative, directly informing the flow, emphasis, and fidelity of the final prototypes.</p>
       </div>
-      <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; justify-content: normal; align-items: center; width: 800px"><img src="./frame-1437256123-mtv0v7zh-1dv8.png" onClick="{{ openImg }}" alt="frame-1437256123" width="972" height="572" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 972px; aspect-ratio: 972 / 572"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; color: #2E2E2E; font-size: 11px"><span style="color: rgb(29, 29, 29); font-size: 12px; text-transform: uppercase"><span style="text-transform: uppercase; color: #2E2E2E; font-weight: 400">Mapping Epics to Use Cases and User Messaging</span></span></span></div>
+      <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; justify-content: normal; align-items: center; width: 800px; max-width: 100%"><img src="./frame-1437256123-mtv0v7zh-1dv8.png" onClick="{{ openImg }}" alt="frame-1437256123" width="972" height="572" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 972px; aspect-ratio: 972 / 572"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; color: #2E2E2E; font-size: 11px"><span style="color: rgb(29, 29, 29); font-size: 12px; text-transform: uppercase"><span style="text-transform: uppercase; color: #2E2E2E; font-weight: 400">Mapping Epics to Use Cases and User Messaging</span></span></span></div>
     </div>
 
     <!-- Section 6: Hierarchy of priorities -->
@@ -214,7 +219,7 @@
           <div onMouseMove="{{ onCardMove }}" onMouseLeave="{{ onCardLeave }}" class="tilt-card icon-card" style="padding-top: 12px; padding-right: 12px; padding-bottom: 12px; padding-left: 12px; box-shadow: 0px 0px 0px 0px #00000000"><img decoding="async" src="./uploads/icon-bonuses.png" alt="" style="height: 28px; width: 28px"><span style="font-weight: 400; font-size: 14px; color: #727272; letter-spacing: -0.24px">Bonuses</span></div>
         </div>
       </div>
-      <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; justify-content: normal; align-items: center; width: 800px"><img src="./frame-1437256124-mtv13i9u-71xk.png" onClick="{{ openImg }}" alt="frame-1437256124" width="972" height="322" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 972px; aspect-ratio: 972 / 322"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; color: #2E2E2E; font-size: 11px"><span style="color: rgb(29, 29, 29); font-size: 12px; text-transform: uppercase"><span style="text-transform: uppercase"><span style="white-space: pre-wrap; font-weight: 400">Use cases</span></span></span></span></div>
+      <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 10px; justify-content: normal; align-items: center; width: 800px; max-width: 100%"><img src="./frame-1437256124-mtv13i9u-71xk.png" onClick="{{ openImg }}" alt="frame-1437256124" width="972" height="322" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 972px; aspect-ratio: 972 / 322"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; color: #2E2E2E; font-size: 11px"><span style="color: rgb(29, 29, 29); font-size: 12px; text-transform: uppercase"><span style="text-transform: uppercase"><span style="white-space: pre-wrap; font-weight: 400">Use cases</span></span></span></span></div>
     </div>
 
   </div>
@@ -560,7 +565,7 @@ Outcome: Story-driven monthly recap shipped to HDFC's full mobile banking user b
   onFreeCursorMove = (e) => {
     const el = this.freeCursorRef.current;
     if (!el) return;
-    if (e.target.closest('#pg-footer-section')) { el.style.opacity = '0'; return; }
+    if (e.target.closest('#pg-footer-section') || e.target.closest('#menu-fab')) { el.style.opacity = '0'; return; }
     el.style.left = (e.clientX - 10) + 'px';
     el.style.top = (e.clientY - 10) + 'px';
     el.style.opacity = '1';

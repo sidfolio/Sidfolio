@@ -37,6 +37,12 @@
     .carousel-track img { -webkit-user-drag: none; }
     .carousel-card { flex-shrink: 0; height: 420px; border-radius: 12px; overflow: hidden; }
     .carousel-card img { height: 100%; width: auto; display: block; }
+    @media (max-width: 600px) {
+      .hero-video-wrap { height: auto !important; aspect-ratio: 800/460; }
+      .carousel-card { height: 180px !important; }
+      .h2 { font-size: 16px !important; line-height: 20px !important; }
+      .role-badge { white-space: normal !important; }
+    }
     .pill { box-shadow: inset 0 0 0 1px rgb(29,29,29); padding: 4px 8px; font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 12px; color: rgb(29,29,29); text-transform: uppercase; white-space: nowrap; }
     .tilt-card { transform: perspective(1000px) rotateX(0) rotateY(0) scale(1) translateZ(0); will-change: transform; }
     @media (max-width: 860px) { .cards-row { flex-direction: column !important; } .stats-row { flex-direction: column !important; } }
@@ -96,7 +102,7 @@
     <div class="content-container" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 56px 24px 60px; padding-top: 24px; padding-bottom: 24px">
       <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; max-width: 956px">
         <div style="display: flex; justify-content: center; align-items: center; padding: 6px 12px; border-radius: 0px; border: none; flex-shrink: 0; background-color: #ECECEC">
-          <span style="font-family: 'Work Sans', sans-serif; font-weight: 500; font-size: 12px; color: #2E2E2E; text-transform: uppercase; letter-spacing: 0.12px; line-height: 18px; white-space: nowrap">Lead Experience Designer @ Infosys Wongdoody</span>
+          <span class="role-badge" style="font-family: 'Work Sans', sans-serif; font-weight: 500; font-size: 12px; color: #2E2E2E; text-transform: uppercase; letter-spacing: 0.12px; line-height: 18px; white-space: nowrap">Lead Experience Designer @ Infosys Wongdoody</span>
         </div>
         <h1 style="font-family: 'Work Sans', sans-serif; font-weight: 400; font-size: 24px; line-height: 32px; text-align: left; color: #2E2E2EEB; letter-spacing: -0.24px">Redesigning Integrated Eligibility System (IES) for enhanced status view and faster case processing</h1>
         <div style="display: flex; gap: 8px; justify-content: flex-start; align-items: center; flex-wrap: wrap; font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.196px; color: #727272">
@@ -111,7 +117,7 @@
           <span style="color: #969696; font-weight: 400; white-space: nowrap; letter-spacing: -0.24px">Prototyping</span>
         </div>
       </div>
-      <div style="width: 800px; height: 460px; max-width: 100%; overflow: hidden; align-self: flex-start;">
+      <div class="hero-video-wrap" style="width: 800px; height: 460px; max-width: 100%; overflow: hidden; align-self: flex-start;">
         <video src="uploads/IES-71a35650.mp4" autoplay="true" loop="true" muted="true" playsinline="" style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
       </div>
     </div>
@@ -822,7 +828,7 @@ Outcome: Redesigned 150+ screens across 9+ workflows in a federal eligibility sy
   onFreeCursorMove = (e) => {
     const el = this.freeCursorRef.current;
     if (!el) return;
-    if (e.target.closest('#pg-footer-section')) { el.style.opacity = '0'; return; }
+    if (e.target.closest('#pg-footer-section') || e.target.closest('#menu-fab')) { el.style.opacity = '0'; return; }
     el.style.left = (e.clientX - 10) + 'px';
     el.style.top = (e.clientY - 10) + 'px';
     el.style.opacity = '1';

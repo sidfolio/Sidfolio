@@ -110,11 +110,34 @@
       .content-container { padding-inline: 32px !important; }
       #top-cards-container a:active > [data-ov] { background: rgba(255,255,255,0.25) !important; }
     }
+    @media (max-width: 900px) {
+      .hero-metadata-row { gap: 6px !important; }
+    }
+    @media (max-width: 600px) {
+      .hero-metadata-row { font-size: 11px !important; gap: 13px !important; }
+    }
     /* ── responsive: mobile ── */
     @media (max-width: 600px) {
-      #hero-pin { width: min(340px, calc(100vw - 40px)) !important; }
+      #hero-pin { width: calc(100vw - 32px) !important; max-width: 100%; }
+      #hero-pin > div:nth-child(1) > div { padding: 4px 10px !important; font-size: 11px !important; }
+      .work-exp-logos { gap: 16px 20px !important; }
+      .work-exp-logos img { width: auto !important; height: 16px !important; max-height: none !important; max-width: 70px !important; }
+    }
       .content-container { padding-inline: 16px !important; }
       .hero-tile-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      html, body, * { cursor: auto !important; }
+      #card-trail-canvas, [data-cursor-icon], [data-cursor-label] { display: none !important; }
+      #game-section, #game-section-buttons, #pixel-grid-wrapper { display: none !important; }
+      .about-row1, .about-row2 { justify-items: stretch; }
+      #top-projects-section, #about-section { display: block !important; }
+      #top-projects-section { padding-bottom: 24px !important; }
+      #top-projects-section > .content-container, #about-section > .content-container { margin: 0 auto !important; }
+      #about-section { padding-top: 8px !important; align-items: center !important; }
+      #about-content { align-items: center !important; }
+      #about-content > *, .about-row1, .about-row2, .about-row1 > *, .about-row2 > * { width: 100% !important; max-width: 100% !important; margin: 0 !important; box-sizing: border-box; }
+      #work-logos-section { padding: 0 0 24px !important; justify-content: center !important; }
+      #mobile-menu-btn { display: flex !important; }
+      #site-navbar { display: none !important; }
     }
   [data-nav-btn] span { text-transform: uppercase; }
     </style>
@@ -162,10 +185,10 @@
   <div id="mobile-menu-btn" onClick="{{ onMobileMenuToggle }}" role="button" aria-label="Menu" tabindex="0" onMouseEnter="{{ onHamburgerEnter }}" onMouseLeave="{{ onHamburgerLeave }}" onMouseDown="{{ onHamburgerDown }}" onMouseUp="{{ onHamburgerEnter }}" style="position: fixed; top: 6px; right: 12px; z-index: 201; width: 44px; height: 44px; display: none; align-items: center; justify-content: center; cursor: pointer; border-radius: 50%; transition: background 0.15s ease;">
     <img src="uploads/ci_hamburger-md.svg" alt="Menu" width="24" height="24" style="display: block; pointer-events: none;">
   </div>
-  <div style="position: fixed; inset: 0; z-index: 199; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); display: {{ mobileMenuDisplay }}; flex-direction: column; padding: 84px 24px 40px; gap: 4px; overflow-y: auto;">
-    <div onClick="{{ onMobileProjectsClick }}" style="padding: 18px 8px; border-bottom: 1px solid #ECECEC; font-family: 'Work Sans', sans-serif; font-size: 20px; font-weight: 500; color: #2E2E2E; cursor: pointer; min-height: 44px;">Projects</div>
-    <div onClick="{{ onMobileAboutClick }}" style="padding: 18px 8px; border-bottom: 1px solid #ECECEC; font-family: 'Work Sans', sans-serif; font-size: 20px; font-weight: 500; color: #2E2E2E; cursor: pointer; min-height: 44px;">About</div>
-    <div onClick="{{ onMobileAgentClick }}" style="padding: 18px 8px; font-family: 'Work Sans', sans-serif; font-size: 20px; font-weight: 500; color: #2E2E2E; cursor: pointer; min-height: 44px;">Agent mode</div>
+  <div style="position: fixed; inset: 0; z-index: 199; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); display: {{ mobileMenuDisplay }}; flex-direction: column; justify-content: flex-end; padding: 40px 24px; gap: 4px; overflow-y: auto;">
+    <div onClick="{{ onMobileProjectsClick }}" style="padding: 18px 8px; border-bottom: 1px solid #ECECEC; font-family: 'Work Sans', sans-serif; font-size: 20px; font-weight: 500; color: #2E2E2E; cursor: pointer; min-height: 44px; text-align: left;">Projects</div>
+    <div onClick="{{ onMobileAboutClick }}" style="padding: 18px 8px; border-bottom: 1px solid #ECECEC; font-family: 'Work Sans', sans-serif; font-size: 20px; font-weight: 500; color: #2E2E2E; cursor: pointer; min-height: 44px; text-align: left;">About</div>
+    <div onClick="{{ onMobileAgentClick }}" style="padding: 18px 8px; font-family: 'Work Sans', sans-serif; font-size: 20px; font-weight: 500; color: #2E2E2E; cursor: pointer; min-height: 44px; text-align: right;">Agent mode</div>
   </div>
 
   <!-- ── HERO SECTION ── -->
@@ -181,7 +204,7 @@
           {{ heroHeading }}
         </h1>
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 8px 12px; align-items: center; gap: 12px; margin-top: 24px; width: 100%; font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.196px; color: #2E2E2E;">
+        <div class="hero-metadata-row" style="display: flex; flex-wrap: nowrap; justify-content: center; padding: 8px 0; align-items: center; gap: 12px; margin-top: 10px; width: 100%; max-width: 100%; box-sizing: border-box; font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.196px; color: #2E2E2E;">
           {{ heroMetadata }}
         </div>
       </div>
@@ -198,7 +221,7 @@
       <div id="work-logos-section" style="position: relative; z-index: 1; width: 100%; display: {{ workExperienceDisplay }}; justify-content: center; padding: 0 24px 24px;" data-om-label="Work experience logos">
         <canvas id="logos-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
         <div ref="{{ workStickyWrapRef }}" style="transition: opacity 0.4s ease; {{ workDynamicStyle }}">
-          <div style="position: relative; z-index: 1; display: inline-flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap">
+          <div style="position: relative; z-index: 1; display: inline-flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap" class="work-exp-logos">
             <img src="uploads/NYU-82971275.svg" alt="New York University" style="width: 64px; height: 30px; flex-shrink: 0; display: block">
             <img src="uploads/P%26G-455c8911.svg" alt="Procter &amp; Gamble" style="width: auto; height: 30px; flex-shrink: 0; display: block; object-fit: contain">
             <img src="uploads/WONGDOODY-8005415f.svg" alt="WongDoody" style="width: 88px; height: 16px; flex-shrink: 0; display: block">
@@ -329,7 +352,7 @@ Person of high personal integrity, highly committed with each work, he acts open
 
 
   <!-- ── GAME SECTION (moved from hero) ── -->
-  <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 16px"><div style="z-index: 1; width: 100%; max-width: 900px; margin: 10px auto 0; padding: 0 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center">
+  <div id="pixel-grid-wrapper" style="box-sizing: border-box; display: flex; flex-direction: column; gap: 16px"><div style="z-index: 1; width: 100%; max-width: 900px; margin: 10px auto 0; padding: 0 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center">
     <p style="margin: 0; font-family: 'Work Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2E2E2E;">Thanks for reviewing my work! This is a small present for you.</p>
     <p style="margin: 0; font-family: 'Work Sans', sans-serif; font-size: 13px; font-weight: 400; color: #666666; line-height: 1.4">Click Paint and simply hover anywhere on the grid below to draw with your cursor trail, use the diamond button to change the theme, cursor trail, pixel size and blink settings while you paint, and click Export GIF to download everything you created as GIF.</p>
   </div><div id="game-section-buttons" style="z-index: 1; width: 100%; max-width: 900px; margin: 16px auto 0; padding: 0 24px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between">
@@ -717,7 +740,7 @@ class Component extends DCLogic {
 
   /* ── data ── */
   topProjects = [
-    { title: 'Internal Brand Portal for Procter & Gamble (P&G)',   desc: 'A scalable DAM platform centralizing creative assets for P&G\'s global brands.', tags: ['Digital Asset Management', 'UI/UX Design', 'Design Systems'] },
+    { title: 'Internal Brand Portal for Procter & Gamble (P&G)',   desc: 'A scalable DAM platform centralizing creative assets for P&G\'s global brands.', tags: ['Asset Management', 'UI/UX Design', 'Design Systems'] },
     { title: "Recap feature for HDFC Bank's mobile app", desc: "Designed HDFC Bank's monthly transaction recap for 32M+ mobile banking users", tags: ['Banking', 'User study', 'Visual design', 'Prototyping'] },
     { title: 'IES Portal (US Gov) with Infosys Public Services',   desc: 'Redesigned IES workflows for caseworkers to speed up eligibility verification', tags: ['Public Sector', 'Redesign', 'Salesforce Design System'] },
     { title: 'Explicit and mutable context for LLM tools (research)', desc: 'A spatial, editable context layer so AI remembers you accurately', tags: ['Human-AI Interaction', 'Conversational AI', 'HCI'] },

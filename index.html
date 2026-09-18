@@ -114,7 +114,7 @@
       .hero-metadata-row { gap: 6px !important; }
     }
     @media (max-width: 600px) {
-      .hero-metadata-row { font-size: 11px !important; gap: 13px !important; }
+      .hero-metadata-row { font-size: 12px !important; gap: 13px !important; }
     }
     /* ── responsive: mobile ── */
     @media (max-width: 600px) {
@@ -127,6 +127,7 @@
       .hero-tile-grid { grid-template-columns: repeat(2, 1fr) !important; }
       html, body, * { cursor: auto !important; }
       #card-trail-canvas, [data-cursor-icon], [data-cursor-label] { display: none !important; }
+      .custom-cursor-dot { display: none !important; }
       #game-section, #game-section-buttons, #pixel-grid-wrapper { display: none !important; }
       .about-row1, .about-row2 { justify-items: stretch; }
       #top-projects-section, #about-section { display: block !important; }
@@ -145,7 +146,7 @@
 
 <div style="min-height: 100vh; background: #fff; overflow-x: hidden; cursor: none;">
 
-  <div ref="{{ globalCursorRef }}" style="position: fixed; left: -100px; top: -100px; width: 14px; height: 14px; background: #2E2E2E; pointer-events: none; z-index: 900; opacity: 0; will-change: left, top, width; overflow: hidden; transform: rotate(45deg); border-radius: 0;">
+  <div ref="{{ globalCursorRef }}" class="custom-cursor-dot" style="position: fixed; left: -100px; top: -100px; width: 14px; height: 14px; background: #2E2E2E; pointer-events: none; z-index: 900; opacity: 0; will-change: left, top, width; overflow: hidden; transform: rotate(45deg); border-radius: 0;">
     <img src="uploads/garden_eye-fill-12.svg" alt="" style="width: 16px; height: 16px; flex-shrink: 0; opacity: 0; filter: brightness(0) saturate(100%) invert(20%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(90%); transform: rotate(-45deg)" data-cursor-icon="1">
     <span style="font-family: 'Work Sans', sans-serif; font-size: 13px; font-weight: 500; color: #2E2E2E; white-space: nowrap; opacity: 0; text-transform: uppercase; letter-spacing: 0.6px; transform: rotate(-45deg);" data-cursor-label="1">View this project</span>
   </div>

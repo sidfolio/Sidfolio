@@ -48,6 +48,7 @@
     }
     @media (min-width: 901px) {
       #side-panel { display: flex !important; }
+      * { cursor: none !important; }
     }
   [data-nav-btn] span { text-transform: uppercase; }
     </style>
@@ -55,7 +56,7 @@
 
 <div onMouseMove="{{ onFreeCursorMove }}" onMouseLeave="{{ onFreeCursorLeave }}" id="modal-wrapper" style="min-height: 100vh; background: #fff; position: relative; overflow-x: hidden; padding-left: 232px; box-sizing: border-box; cursor: none;">
   <canvas id="card-trail-canvas" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 250; pointer-events: none"></canvas>
-  <div ref="{{ freeCursorRef }}" style="position: fixed; left: -100px; top: -100px; width: 20px; height: 20px; background: #1A1A1A; pointer-events: none; z-index: 600; opacity: 0; will-change: left, top"></div>
+  <div ref="{{ freeCursorRef }}" style="position: fixed; left: -100px; top: -100px; width: 14px; height: 14px; background: #1A1A1A; pointer-events: none; z-index: 700; opacity: 0; will-change: left, top; transform: rotate(45deg);"></div>
 
   <div id="menu-fab" onClick="{{ onMenuSheetToggle }}" role="button" aria-label="Menu" tabindex="0" style="position: fixed; bottom: 20px; right: 20px; z-index: 660; width: 56px; height: 56px; border-radius: 50%; background: #1A1A1A; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25)">
     <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
@@ -65,7 +66,7 @@
     </svg>
   </div>
   <div id="side-panel" style="position: fixed; top: 0; left: 0; width: 200px; height: 100vh; z-index: 650; background: rgba(255,255,255,0.9); border-right: 1px solid #D3D3D3; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-sizing: border-box; display: {{ menuSheetDisplay }}; flex-direction: column; padding: 16px 12px; justify-content: space-between; padding-top: 24px; padding-bottom: 24px">
-    <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 20px; justify-content: space-between; align-items: normal" data-om-label="Top"><div onClick="{{ onBackClick }}" data-nav-btn="true" onMouseEnter="{{ onNavBtnEnter }}" onMouseLeave="{{ onNavBtnLeave }}" onMouseDown="{{ onNavBtnDown }}" onMouseUp="{{ onNavBtnUp }}" style="display: inline-flex; padding: 8px 12px; align-items: center; gap: 6px; box-sizing: border-box; cursor: pointer; background: transparent; padding-left: 0px">
+    <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 20px; justify-content: space-between; align-items: normal" data-om-label="Top"><div onClick="{{ onBackClick }}" data-nav-btn="true" onMouseEnter="{{ onNavBtnEnter }}" onMouseLeave="{{ onNavBtnLeave }}" onMouseDown="{{ onNavBtnDown }}" onMouseUp="{{ onNavBtnUp }}" style="display: inline-flex; padding: 8px 12px; align-items: center; gap: 6px; box-sizing: border-box; cursor: pointer; background: transparent">
       <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M9 1L2 7L9 13" stroke="#383838" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       <span style="font-family: 'Work Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: -0.12px; color: #383838;">Back</span>
     </div><div style="display: flex; flex-direction: column; gap: 4px;">
@@ -180,7 +181,7 @@ Due to the complexity of multi-member applications, the portal is extensive and 
       
       
         
-        <img src="./frame-1437256113-mtuxqbjc-vc56.png" alt="frame-1437256113" width="1789" height="510" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 510"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px"><span style="white-space: pre-wrap;">HERE'S A SIMPLIFIED VIEW OF IES</span></span>
+        <img src="./frame-1437256113-mtuxqbjc-vc56.png" onClick="{{ openImg }}" alt="frame-1437256113" width="1789" height="510" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 510"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px"><span style="white-space: pre-wrap;">HERE'S A SIMPLIFIED VIEW OF IES</span></span>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
         
         
@@ -215,7 +216,7 @@ Due to the complexity of multi-member applications, the portal is extensive and 
       
       
         
-        <img src="./frame-1437256115-mtuxxupg-atsn.png" alt="frame-1437256115" width="1789" height="367" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 367"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px"><span style="white-space: pre-wrap;">HERE’S A SIMPLE FLOW FOR YOU TO UNDERSTAND HOW THE PORTAL WORKS...</span></span>
+        <img src="./frame-1437256115-mtuxxupg-atsn.png" onClick="{{ openImg }}" alt="frame-1437256115" width="1789" height="367" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 367"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px"><span style="white-space: pre-wrap;">HERE’S A SIMPLE FLOW FOR YOU TO UNDERSTAND HOW THE PORTAL WORKS...</span></span>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
         
         
@@ -273,7 +274,7 @@ Due to the complexity of multi-member applications, the portal is extensive and 
       
       
         
-        <img src="./frame-1437256118-mtuyfmg2-tbu0.png" alt="frame-1437256118" width="1789" height="801" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 801"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px"><span style="white-space: pre-wrap;">Actionable insights from heuristics and laws</span></span>
+        <img src="./frame-1437256118-mtuyfmg2-tbu0.png" onClick="{{ openImg }}" alt="frame-1437256118" width="1789" height="801" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 801"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px"><span style="white-space: pre-wrap;">Actionable insights from heuristics and laws</span></span>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
         
         
@@ -329,7 +330,7 @@ Due to the complexity of multi-member applications, the portal is extensive and 
       
       
         
-        <img src="./frame-1437256116-mtuy4vfg-vza0.png" alt="frame-1437256116" width="1789" height="645" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 645"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px"><span style="white-space: pre-wrap;">ISSUES WITH THE EXISTING PORTAL</span></span>
+        <img src="./frame-1437256116-mtuy4vfg-vza0.png" onClick="{{ openImg }}" alt="frame-1437256116" width="1789" height="645" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 645"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px"><span style="white-space: pre-wrap;">ISSUES WITH THE EXISTING PORTAL</span></span>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
         
         
@@ -353,7 +354,7 @@ Due to the complexity of multi-member applications, the portal is extensive and 
       
       
         
-        <img src="./frame-1437256117-mtuydpfc-3k59.png" alt="frame-1437256117" width="1789" height="801" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 801"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px">Creating custom components on Figma</span>
+        <img src="./frame-1437256117-mtuydpfc-3k59.png" onClick="{{ openImg }}" alt="frame-1437256117" width="1789" height="801" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 801"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px">Creating custom components on Figma</span>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
         
         
@@ -372,22 +373,22 @@ Due to the complexity of multi-member applications, the portal is extensive and 
       
       <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 14px; justify-content: normal; align-items: normal"><div style="display: flex; flex-direction: column; gap: 10px; align-items: center">
         
-        <img src="./frame-1437256121-mtuyz3au-csth.png" alt="frame-1437256121" width="1420" height="679" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1420px; aspect-ratio: 1420 / 679"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px"><span style="white-space: pre-wrap;">Integrating Salesforce’s Lightning Design System</span></span>
+        <img src="./frame-1437256121-mtuyz3au-csth.png" onClick="{{ openImg }}" alt="frame-1437256121" width="1420" height="679" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 1420px; aspect-ratio: 1420 / 679"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px"><span style="white-space: pre-wrap;">Integrating Salesforce’s Lightning Design System</span></span>
       </div><div style="display: flex; flex-direction: column; gap: 10px; align-items: center">
         
-        <img src="./frame-1437256119-mtuynrqg-vrp6.png" alt="frame-1437256119" width="1789" height="801" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 801"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px">Creating custom components on Figma</span>
+        <img src="./frame-1437256119-mtuynrqg-vrp6.png" onClick="{{ openImg }}" alt="frame-1437256119" width="1789" height="801" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 1789px; aspect-ratio: 1789 / 801"><span class="mockup-caption" style="font-weight: 500; text-transform: uppercase; font-size: 11px">Creating custom components on Figma</span>
       </div></div>
     </div>
 
     <!-- Presenting the solution -->
     <div id="sec-solution" style="display: flex; flex-direction: column; gap: 14px">
       <h2 class="h2" style="color: #2E2E2E; font-size: 20px; font-weight: 400; letter-spacing: -0.24px">Presenting the solution</h2>
-      <img src="./frame-1437256123-mtuz6094-q5h1.png" alt="frame-1437256123" width="1280" height="679" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1280px; aspect-ratio: 1280 / 679">
+      <img src="./frame-1437256123-mtuz6094-q5h1.png" onClick="{{ openImg }}" alt="frame-1437256123" width="1280" height="679" style="cursor: zoom-in; max-width: 100%; height: auto; display: block; object-fit: cover; width: 1280px; aspect-ratio: 1280 / 679">
     </div>
   </div></div>
 
   <!-- ── LIGHTBOX ── -->
-  <div onClick="{{ closeLightbox }}" onWheel="{{ onLightboxWheel }}" style="display: {{ lightboxDisplay }}; position: fixed; inset: 0; background: rgba(16,15,20,0.92); z-index: 500; align-items: center; justify-content: center; padding: 40px; overflow: hidden; cursor: {{ lightboxCursor }};">
+  <div onClick="{{ closeLightbox }}" onWheel="{{ onLightboxWheel }}" style="display: {{ lightboxDisplay }}; position: fixed; inset: 0; background: rgba(16,15,20,0.92); z-index: 800; align-items: center; justify-content: center; padding: 40px; overflow: hidden; cursor: {{ lightboxCursor }};">
     <img loading="lazy" decoding="async" draggable="false" src="{{ lightboxSrc }}" alt="" onClick="{{ stopProp }}" onMouseDown="{{ onLightboxDown }}" onDoubleClick="{{ onLightboxDoubleClick }}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 20px 60px rgba(0,0,0,0.5); transform: {{ lightboxTransform }}; transition: {{ lightboxTransition }};">
     <div onClick="{{ closeLightbox }}" style="position: absolute; top: 20px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; color: #fff; font-family: 'Work Sans', sans-serif; font-size: 20px;">✕</div>
     <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.7); font-family: 'Work Sans', sans-serif; font-size: 12px;">Scroll or double-click to zoom · drag to pan</div>
@@ -491,6 +492,10 @@ Outcome: Redesigned 150+ screens across 9+ workflows in a federal eligibility sy
       agentToggleLabel: this.state.agentMode ? 'Human mode' : 'Agent mode',
       agentNoteText: this.AGENT_NOTE,
       onBackClick: this.onBackClick,
+      onNavBtnEnter: this.onNavBtnEnter,
+      onNavBtnLeave: this.onNavBtnLeave,
+      onNavBtnDown: this.onNavBtnDown,
+      onNavBtnUp: this.onNavBtnUp,
       onAgentToggle: this.onAgentToggle,
       onMenuSheetToggle: this.onMenuSheetToggle,
       menuSheetDisplay: this.state.menuSheetOpen ? 'flex' : 'none',
@@ -518,10 +523,6 @@ Outcome: Redesigned 150+ screens across 9+ workflows in a federal eligibility sy
   openImg = (e) => {
     e.stopPropagation();
     if (e.currentTarget.closest('.carousel-track') && e.currentTarget.closest('.carousel-viewport')._justDragged) return;
-    if (window.parent !== window) {
-      window.parent.postMessage({ type: 'sid-lightbox-open', src: e.currentTarget.src }, '*');
-      return;
-    }
     this.setState({ lightboxSrc: e.currentTarget.src, lightboxZoom: 1, lightboxX: 0, lightboxY: 0 });
   };
   closeLightbox = () => this.setState({ lightboxSrc: null, lightboxZoom: 1, lightboxX: 0, lightboxY: 0 });
@@ -752,7 +753,7 @@ Outcome: Redesigned 150+ screens across 9+ workflows in a federal eligibility sy
       const onMove = (e) => {
         if (!c.dragging) return;
         const x = (e.touches ? e.touches[0].clientX : e.clientX);
-        if (Math.abs(x - c.startX) > 3) c.moved = true;
+        if (Math.abs(x - c.startX) > 10) c.moved = true;
         c.pos = c.startScroll - (x - c.startX);
         vp.scrollLeft = c.pos;
       };
@@ -767,12 +768,30 @@ Outcome: Redesigned 150+ screens across 9+ workflows in a federal eligibility sy
         setTimeout(() => { vp._justDragged = false; }, 50);
         c.resumeTimer = setTimeout(() => { c.paused = false; }, 600);
       };
+      const onEnter = () => { clearTimeout(c.resumeTimer); c.paused = true; };
+      const onLeave = () => { if (!c.dragging) c.resumeTimer = setTimeout(() => { c.paused = false; }, 200); };
+      const onWheel = (e) => {
+        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+        const horiz = e.deltaX;
+        if (horiz === 0) return;
+        e.preventDefault();
+        clearTimeout(c.resumeTimer);
+        c.paused = true;
+        c.pos = vp.scrollLeft + horiz;
+        if (c.pos >= c.half) c.pos -= c.half;
+        if (c.pos < 0) c.pos += c.half;
+        vp.scrollLeft = c.pos;
+        c.resumeTimer = setTimeout(() => { c.paused = false; }, 500);
+      };
       vp.addEventListener('mousedown', onDown);
       window.addEventListener('mousemove', onMove);
       window.addEventListener('mouseup', onUp);
       vp.addEventListener('touchstart', onDown, { passive: true });
       vp.addEventListener('touchmove', onMove, { passive: true });
       vp.addEventListener('touchend', onUp);
+      vp.addEventListener('mouseenter', onEnter);
+      vp.addEventListener('mouseleave', onLeave);
+      vp.addEventListener('wheel', onWheel, { passive: false });
       this._carousels.push(c);
       this._carouselCleanups.push(() => {
         ro.disconnect();
@@ -783,6 +802,9 @@ Outcome: Redesigned 150+ screens across 9+ workflows in a federal eligibility sy
         vp.removeEventListener('touchstart', onDown);
         vp.removeEventListener('touchmove', onMove);
         vp.removeEventListener('touchend', onUp);
+        vp.removeEventListener('mouseenter', onEnter);
+        vp.removeEventListener('mouseleave', onLeave);
+        vp.removeEventListener('wheel', onWheel);
       });
     });
   }

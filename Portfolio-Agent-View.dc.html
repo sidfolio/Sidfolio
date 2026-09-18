@@ -186,7 +186,7 @@ class Component extends DCLogic {
   componentDidMount() {
     if (this.humanBtnRef.current) this.setState({ toggleShiftPx: this.humanBtnRef.current.offsetWidth });
   }
-  onHumanNavClick = () => { window.location.href = './New Concept Portfolio.dc.html'; };
+  onHumanNavClick = () => { window.location.href = './index.html'; };
   onCopy = () => {
     const done = () => {
       this.setState({ copyLabel: 'Copied' });
